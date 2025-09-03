@@ -1,11 +1,8 @@
 def x_dot_y(X,Y):
     dot_result = 0
-    for index_i,i in enumerate(X):
-        for index_j,j in enumerate(Y):
-            if index_i==index_j:
-                dot_result+= i*j
-            else :
-                continue
+    dot_list=[X[i]*Y[i] for i in range(len(Y))]
+    for i in dot_list:
+        dot_result+=i
     return dot_result
 
 def norm(num):
