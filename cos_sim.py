@@ -29,7 +29,27 @@ movies = {
     'Bird Box':[6,5,3,1,7,2],
     'Parasite':[9,3,2,6,5,4],
     'Moonlight':[9,1,1,2,1,6],
-    'Sinners':[8,4,3,2,6,3]
+    'Sinners':[8,4,3,2,6,3],
+    'No Time to Die':[8,9,6,5,4,7],
+    'Dune':[8,6,10,2,3,4],
+    'Old':[7,4,7,3,6,2],
+    'Hocus Pocus':[5,3,2,7,4,3],
+    'Cruella':[6.5,7,1,7,2,3],
+    'Promising Young Woman':[9,3,1,7,5,4],
+    'Knives Out':[7,3,1,8,2,2],
+    'Forrest Gump':[9,2,1,7,1,6],
+    '3 Idiots':[8,2,1,9,1,4],
+    'Black Bag':[7,8,2,2,1,3],
+    'Pulpa Fiction':[8,8,0,6,3,2],
+    'The Batman':[8,9,2,2,3,3],
+    'A Quiet Place':[7,6,7,1,9,3],
+    'hereditary':[8,2,0,1,10,1],
+    'The Northman':[8,9,0,2,3,3],
+    'The Menu':[7,3,0,7,8,2],
+    'Don\'t Look Up':[6,3,8,8,2,2],
+    'The Whale':[10,1,0,2,1,4],
+    'The Lighthouse':[8,2,0,2,9,1],
+    'Arrival':[9,5,10,2,3,4]
 }
 similarities = {}
 while True:
