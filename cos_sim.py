@@ -31,8 +31,7 @@ movies = {
     'Sinners':[8,4,3,2,6,3]
 }
 while True:
-    print('')
-    print("Available movies:\n")
+    print("\nAvailable movies:\n")
     for movie in movies.keys():
         print("-", movie)
 
@@ -49,5 +48,7 @@ while True:
 
         recommended = max(similarities, key=similarities.get)
         print(f"\nRecommended movie: {recommended}")
-        print(f"Cosine similarity: {similarities[recommended]:.4f}")
+        print(f"With Similarity: {similarities[recommended]*100:.2f}%\n")
+    
         break
+    
