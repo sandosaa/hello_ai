@@ -7,6 +7,7 @@ def norm(vec):
 def cosine_similarity(X, Y):
     return x_dot_y(X, Y) / (norm(X) * norm(Y))
 
+
 movies = {
     'The Shawshank Redemption':[9.2,6.5,5,6.8,6.2,6],
     'The Godfather':[9.7,7.2,4.5,6.5,7.5,7],
@@ -61,6 +62,8 @@ while True:
                     top_3.append((best_movie, similarities[best_movie]))
                     del similarities[best_movie]
                 break
+        
+
         if choice =='1':
             usr_rate=[]
             types_movie=['Drama','Action','Sci-fi','Comedy','Scary','Romantic']
@@ -88,10 +91,20 @@ while True:
                 print(f"\nRecommended movie: {recommended}")
                 print(f"With Similarity: {similarities[recommended]*100:.2f}%\n")
                 break
+            
         else:
             print('You entered invaild input!')        
             choice=input('If you want add your own rate enter "1" and if you want choose the movie enter "2": ')
 
+    usr = input('Do you want to continue? (y/n): ').strip().lower()
+    if usr =='y':
+        pass 
+    elif usr == 'n':
+        print('Byeeeeeeeee<3')
+        break
+    else:
+        print('You entered invalid input,but Goodbye!')
+    
 
 
 
