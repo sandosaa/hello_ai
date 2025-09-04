@@ -31,14 +31,15 @@ movies = {
     'Sinners':[8,4,3,2,6,3]
 }
 while True:
-    print("Available movies:")
+    print('')
+    print("Available movies:\n")
     for movie in movies.keys():
         print("-", movie)
 
     user_movie = input("\nChoose a movie from the list: ".strip()).title()
 
     if user_movie not in movies:
-        print('Movie not found')
+        print('\nMovie not found, Try again!')
 
     else:
         similarities = {}
