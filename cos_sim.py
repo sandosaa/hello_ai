@@ -69,14 +69,14 @@ while True:
             for i in range(6):
                 #Drama,Action,Sci-fi,Comedy,Scary,Romantic
                 try:
-                    usr_input = float(input(types_movie[i],': '))
-                    usr_rate.append(usr_input)
-                except usr_input>10 or usr_input<0:
-                    print('You cant enter a number more than 10 or less than 0.')
-                    usr_input = float(input(types_movie[i],': '))
+                    usr_input = float(input(f'{types_movie[i]}: '))
                 except ValueError: 
                     print('Please enter a valid input!')
                     break  
+                if usr_input>10 or usr_input<0:
+                    print('You cant enter a number more than 10 or less than 0.')
+                    usr_input = float(input(types_movie[i],': '))
+                usr_rate.append(usr_input)
             if norm(usr_rate)==0:
                 print('You can not enter all rates = 0 !')
                 break
