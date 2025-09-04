@@ -36,11 +36,10 @@ while True:
     for movie in movies.keys():
         print("-", movie)
     while True:
-        try:
-            choice=int(input('If you want and your own rate enter "1" and if you want choose the movie enter "2": '))
-        except ValueError :
-            print('Please enter a valid input!')
-        if choice == 2:
+
+        choice=input('If you want add your own rate enter "1" and if you want choose the movie enter "2": ')
+
+        if choice == '2':
     
             user_movie = input("\nChoose a movie from the list: ".strip()).title()
 
@@ -58,11 +57,11 @@ while True:
                 top_3 = []
                 for i in range(3):
                     best_movie = max(similarities, key=similarities.get)
-                    print(best_movie)
+                    print(i+1,"-",best_movie)
                     top_3.append((best_movie, similarities[best_movie]))
                     del similarities[best_movie]
                 break
-        if choice ==1:
+        if choice =='1':
             usr_rate=[]
             types_movie=['Drama','Action','Sci-fi','Comedy','Scary','Romantic']
             print('Enter your rate from 1 to 10 for each type.')
@@ -89,6 +88,13 @@ while True:
                 print(f"\nRecommended movie: {recommended}")
                 print(f"With Similarity: {similarities[recommended]*100:.2f}%\n")
                 break
+        else:
+            print('You entered invaild input!')        
+            choice=input('If you want add your own rate enter "1" and if you want choose the movie enter "2": ')
+
+
+
+
                 
 
 
