@@ -30,25 +30,73 @@ movies = {
     'Moonlight':[9,1,1,2,1,6],
     'Sinners':[8,4,3,2,6,3]
 }
+similarities = {}
 while True:
     print("\nAvailable movies:\n")
     for movie in movies.keys():
         print("-", movie)
-
-    user_movie = input("\nChoose a movie from the list: ".strip()).title()
-
-    if user_movie not in movies:
-        print('\nMovie not found, Try again!')
-
-    else:
-        similarities = {}
-        for movie, ratings in movies.items():
-            if movie != user_movie:
-                similarities[movie] = cosine_similarity(movies[user_movie], ratings)
-
-        recommended = max(similarities, key=similarities.get)
-        print(f"\nRecommended movie: {recommended}")
-        print(f"With Similarity: {similarities[recommended]*100:.2f}%\n")
+    while True:
+        try:
+            choice=int(input('If you want and your own rate enter "1" and if you want choose the movie enter "2": '))
+        except ValueError :
+            print('Please enter a valid input!')
+        if choice == 2:
     
-        break
-    
+            user_movie = input("\nChoose a movie from the list: ".strip()).title()
+
+            if user_movie not in movies:
+                print('\nMovie not found, Try again!')
+
+            else:
+                
+                for movie, ratings in movies.items():
+                    if movie != user_movie:
+                        similarities[movie] = cosine_similarity(movies[user_movie], ratings)
+                recommended = max(similarities, key=similarities.get)
+                print(f"\nRecommended movie: {recommended}")
+                print(f"With Similarity: {similarities[recommended]*100:.2f}%\n")
+                top_3 = []
+                for i in range(3):
+                    best_movie = max(similarities, key=similarities.get)
+                    print(best_movie)
+                    top_3.append((best_movie, similarities[best_movie]))
+                    del similarities[best_movie]
+                break
+        if choice ==1:
+            usr_rate=[]
+            types_movie=['Drama','Action','Sci-fi','Comedy','Scary','Romantic']
+            print('Enter your rate from 1 to 10 for each type.')
+            for i in range(6):
+                #Drama,Action,Sci-fi,Comedy,Scary,Romantic
+                try:
+                    usr_input = float(input(types_movie[i],': '))
+                    usr_rate.append(usr_input)
+                except usr_input>10 or usr_input<0:
+                    print('You cant enter a number more than 10 or less than 0.')
+                    usr_input = float(input(types_movie[i],': '))
+                except ValueError: 
+                    print('Please enter a valid input!')
+                    break  
+            if norm(usr_rate)==0:
+                print('You can not enter all rates = 0 !')
+                break
+            else:
+
+                for movie, ratings in movies.items():
+                    similarities[movie] = cosine_similarity(usr_rate, ratings)
+
+                recommended = max(similarities, key=similarities.get)
+                print(f"\nRecommended movie: {recommended}")
+                print(f"With Similarity: {similarities[recommended]*100:.2f}%\n")
+                break
+                
+
+
+
+
+
+            
+
+
+
+        
