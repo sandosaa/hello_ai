@@ -51,8 +51,9 @@ movies = {
     'The Lighthouse':[8,2,0,2,9,1],
     'Arrival':[9,5,10,2,3,4]
 }
-similarities = {}
+
 while True:
+    similarities = {}
     print("\nAvailable movies:\n")
     for movie in movies.keys():
         print("-", movie)
