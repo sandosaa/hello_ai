@@ -30,7 +30,7 @@ movies = {
     'Parasite':[9,3,2,6,5,4],
     'Moonlight':[9,1,1,2,1,6],
     'Sinners':[8,4,3,2,6,3],
-    'No Time to Die':[8,9,6,5,4,7],
+    'No Time To Die':[8,9,6,5,4,7],
     'Dune':[8,6,10,2,3,4],
     'Old':[7,4,7,3,6,2],
     'Hocus Pocus':[5,3,2,7,4,3],
